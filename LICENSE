@@ -1,3 +1,112 @@
+RClaw Core Framework - Commercial-Friendly AGPLv3 License with Commercial Exemption
+
+Copyright (C) 2026 RClaw (rclaw@rclaw.me)
+
+This document is the complete license for the RClaw Core Framework (the "Software").
+It consists of two parts: (1) Additional Terms and Commercial Exemption Clauses added
+by the author, and (2) the complete GNU Affero General Public License, version 3 (AGPLv3).
+
+═══════════════════════════════════════════════════════════════════
+PART 1: ADDITIONAL TERMS AND COMMERCIAL EXEMPTION CLAUSES
+═══════════════════════════════════════════════════════════════════
+
+1. Definitions
+
+1.1 "Software" means the RClaw Core Framework, including but not limited to its source code,
+     object code, documentation, and any related files.
+1.2 "Commercial Use" means any use for profit-making purposes, including but not limited to:
+     (a) providing the Software or its derivative works as a service (SaaS) to third parties;
+     (b) selling or distributing the Software or its derivative works as part of a product or service;
+     (c) using the Software for any commercial organization's internal business to gain commercial advantage.
+1.3 "Commercial Revenue" means the total gross revenue generated from Commercial Use of the Software
+     or its derivative works.
+1.4 "Licensee" means any person or entity that obtains a license to use the Software.
+
+2. Open Source Core
+
+The core framework of the Software is released under the GNU Affero General Public License,
+version 3 (AGPLv3). This means:
+     (a) Anyone is free to use, copy, modify, and distribute the open source portion of the Software;
+     (b) Any modification or distribution must comply with the terms of AGPLv3;
+     (c) Providing services over a network must make the source code available to all users.
+
+3. Commercial License Obligation
+
+3.1 If the Licensee uses the Software or its derivative works for Commercial Use and:
+     (a) cannot or is unwilling to comply with the open source obligations of AGPLv3; or
+     (b) wishes not to disclose their modified source code; or
+     (c) wishes to distribute the Software or its derivative works in closed-source form;
+     then the Licensee must purchase a commercial exemption license from the copyright holder (RClaw).
+
+3.2 The commercial exemption license grants the Licensee:
+     (a) exemption from the open source obligations of AGPLv3;
+     (b) permission for closed-source distribution and use;
+     (c) permission to integrate the Software into closed-source commercial products.
+
+4. Revenue Sharing Obligation (the "Share the Wealth" Clause)
+
+4.1 If the Licensee generates Commercial Revenue through Commercial Use of the Software,
+     they must pay a revenue sharing fee to the copyright holder (RClaw).
+
+4.2 The revenue sharing ratio is defined as follows:
+     (a) Annual Commercial Revenue below $100,000 USD: exempt, no payment required;
+     (b) Annual Commercial Revenue between $100,000 and $1,000,000 USD:
+         pay 5% of the portion exceeding $100,000;
+     (c) Annual Commercial Revenue above $1,000,000 USD:
+         pay 10% of the portion exceeding $100,000.
+
+4.3 Calculation examples:
+     * Annual revenue of $500,000 → pay (500,000 - 100,000) × 5% = $20,000
+     * Annual revenue of $2,000,000 → pay (2,000,000 - 100,000) × 10% = $190,000
+
+4.4 The revenue sharing fee is calculated annually. The Licensee shall submit a true and accurate
+     revenue report to RClaw within 30 days after the end of each fiscal year, and pay the
+     corresponding amount within 30 days after submitting the report.
+
+4.5 RClaw reserves the right to audit the Licensee's revenue reports. If false reporting is found,
+     RClaw has the right to recover the unpaid amount and terminate this agreement.
+
+4.6 This clause does not apply to:
+     (a) non-commercial use (personal learning, open source project contributions);
+     (b) entities with annual Commercial Revenue below $100,000 USD.
+
+5. Closed-Source Components
+
+Certain components of the Software (including but not limited to VectorIPCService,
+BrowserIpcMcpService, and the GUI frontend) are distributed as closed-source binaries and are
+not included in the open source scope of this license. Use of these components is subject to
+separate commercial license terms. Please contact RClaw for details.
+
+6. Brand Use Restrictions
+
+Without the prior written permission of RClaw, no Licensee may use the name, trademark, logo,
+or similar marks of RClaw to promote, endorse, or imply an association with RClaw.
+
+7. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES.
+
+8. Violation and Termination
+
+8.1 Any violation of these terms will automatically terminate the rights granted under this license.
+8.2 Violation of the Revenue Sharing Clause (Section 4) will result in:
+     (a) automatic termination of this license;
+     (b) RClaw's right to recover all unpaid amounts and interest;
+     (c) RClaw's right to pursue legal action.
+
+9. Governing Law and Dispute Resolution
+
+9.1 This agreement is governed by the laws of the People's Republic of China.
+9.2 Any dispute arising from this agreement shall be submitted to the competent court
+     at the location of RClaw.
+
+═══════════════════════════════════════════════════════════════════
+PART 2: GNU AFFERO GENERAL PUBLIC LICENSE, VERSION 3 (AGPLv3)
+═══════════════════════════════════════════════════════════════════
+
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
@@ -633,8 +742,8 @@ the "copyright" line and a pointer to where the full notice is found.
     Copyright (C) <year>  <name of author>
 
     This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published
-    by the Free Software Foundation, either version 3 of the License, or
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
     This program is distributed in the hope that it will be useful,
@@ -659,3 +768,8 @@ specific requirements.
 if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU AGPL, see
 <https://www.gnu.org/licenses/>.
+
+───────────────────────────────────────────────────────────────────
+Last Updated: June 21, 2026
+Contact: rclaw@rclaw.me
+Website: https://www.rclaw.me
