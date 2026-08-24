@@ -1,4 +1,4 @@
-# DSOS Specification v1.0 — Digital Self Operating System Specification
+# DAOS Specification v1.0 — Digital Avatar Operating System Specification
 
 | | |
 |---|---|
@@ -28,22 +28,22 @@
   - [3.6 Layer Four: Memory & State](#36-layer-four-memory--state)
   - [3.7 Layer Five: Evaluation & Observation](#37-layer-five-evaluation--observation)
   - [3.8 Layer Six: Constraint Recovery](#38-layer-six-constraint-recovery)
-  - [3.9 Layer Seven: Self-Evolution](#39-layer-seven-self-evolution)
+  - [3.9 Layer Seven: Avatar-Evolution](#39-layer-seven-Avatar-evolution)
 - [Chapter 4: Context Management Specification](#chapter-4-context-management-specification)
   - [4.1 Core Problem](#41-core-problem)
-  - [4.2 DSOS Context Management Principles](#42-dsos-context-management-principles)
+  - [4.2 DAOS Context Management Principles](#42-DAOS-context-management-principles)
   - [4.3 Context Structure Specification](#43-context-structure-specification)
   - [4.4 Context-Memory Interaction Flow](#44-context-memory-interaction-flow)
-  - [4.5 Why Fixed Context is the Foundation of DSOS](#45-why-fixed-context-is-the-foundation-of-dsos)
+  - [4.5 Why Fixed Context is the Foundation of DAOS](#45-why-fixed-context-is-the-foundation-of-DAOS)
 - [Chapter 5: Organizational Hierarchy Specification](#chapter-5-organizational-hierarchy-specification)
   - [5.1 User-Agent Relationship Model](#51-user-agent-relationship-model)
   - [5.2 Organizational Hierarchy Mapping](#52-organizational-hierarchy-mapping)
   - [5.3 Permission Matrix](#53-permission-matrix)
   - [5.4 Organizational Memory Perpetuity](#54-organizational-memory-perpetuity)
-- [Chapter 6: Digital Self Specification](#chapter-6-digital-self-specification)
-  - [6.1 Definition of Digital Self](#61-definition-of-digital-self)
-  - [6.2 Formation Mechanism of Digital Self](#62-formation-mechanism-of-digital-self)
-  - [6.3 Visualization of Digital Self](#63-visualization-of-digital-self)
+- [Chapter 6: Digital Avatar Specification](#chapter-6-digital-Avatar-specification)
+  - [6.1 Definition of Digital Avatar](#61-definition-of-digital-Avatar)
+  - [6.2 Formation Mechanism of Digital Avatar](#62-formation-mechanism-of-digital-Avatar)
+  - [6.3 Visualization of Digital Avatar](#63-visualization-of-digital-Avatar)
 - [Chapter 7: Local-First & Privacy Specification](#chapter-7-local-first--privacy-specification)
   - [7.1 Local-First Principle](#71-local-first-principle)
   - [7.2 Data Privacy Specification](#72-data-privacy-specification)
@@ -53,7 +53,7 @@
   - [8.2 Theme/Skin System Specification](#82-themeskin-system-specification)
   - [8.3 Skill Ecosystem Specification](#83-skill-ecosystem-specification)
 - [Chapter 9: Compliance Requirements](#chapter-9-compliance-requirements)
-  - [9.1 DSOS Compliance Levels](#91-dsos-compliance-levels)
+  - [9.1 DAOS Compliance Levels](#91-DAOS-compliance-levels)
   - [9.2 Compliance Checklist](#92-compliance-checklist)
 - [Chapter 10: Reference Implementation — RClaw](#chapter-10-reference-implementation--rclaw)
   - [10.1 RClaw Overview](#101-rclaw-overview)
@@ -61,17 +61,17 @@
   - [10.3 Technology Stack Mapping](#103-technology-stack-mapping)
   - [10.4 Context Management Implementation](#104-context-management-implementation)
 - [Chapter 11: Glossary](#chapter-11-glossary)
-- [Appendix A: Fundamental Differences Between DSOS and Existing "Agent" Products](#appendix-a-fundamental-differences-between-dsos-and-existing-agent-products)
-- [Appendix B: DSOS Specification Version History](#appendix-b-dsos-specification-version-history)
+- [Appendix A: Fundamental Differences Between DAOS and Existing "Agent" Products](#appendix-a-fundamental-differences-between-DAOS-and-existing-agent-products)
+- [Appendix B: DAOS Specification Version History](#appendix-b-DAOS-specification-version-history)
 - [Appendix C: Acknowledgments](#appendix-c-acknowledgments)
 
 ---
 
 ## Preface
 
-The vast majority of products currently marketed as "Agents" are, in essence, chat windows with tool-calling capabilities. Their memory is constrained by the context window size of Large Language Models (LLMs); knowledge cannot be persistently accumulated, behavior cannot self-evolve, and they cannot truly become the user's digital self.
+The vast majority of products currently marketed as "Agents" are, in essence, chat windows with tool-calling capabilities. Their memory is constrained by the context window size of Large Language Models (LLMs); knowledge cannot be persistently accumulated, behavior cannot Avatar-evolve, and they cannot truly become the user's digital Avatar.
 
-The DSOS (Digital Self Operating System) specification is proposed to redefine what a true Agent operating system should be. DSOS is not a brand of any single product — it is an open technical specification. Any system implemented in compliance with this specification can be called a DSOS. The market should have DSOS implementations for healthcare, for education, for legal services — all following the same core specification while adapting to their respective domains.
+The DAOS (Digital Avatar Operating System) specification is proposed to redefine what a true Agent operating system should be. DAOS is not a brand of any single product — it is an open technical specification. Any system implemented in compliance with this specification can be called a DAOS. The market should have DAOS implementations for healthcare, for education, for legal services — all following the same core specification while adapting to their respective domains.
 
 This specification uses RFC 2119 keywords: **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, **MAY**.
 
@@ -81,23 +81,23 @@ This specification uses RFC 2119 keywords: **MUST**, **MUST NOT**, **SHOULD**, *
 
 ### 1.1 Core Terms
 
-- **DSOS** — Digital Self Operating System
-- **Digital Self** — An Agent instance that virtualizes all of the user's behavioral habits
+- **DAOS** — Digital Avatar Operating System
+- **Digital Avatar** — An Agent instance that virtualizes all of the user's behavioral habits
 - **Harness** — The engineering architecture that orchestrates and constrains LLM behavior
 - **LLM** — Large Language Model
 - **Context Window** — The maximum token capacity that an LLM can process in a single inference
 - **Working Context** — The fixed-size conversation history used for interaction with the LLM
 - **Vector Store** — Persistent semantic storage based on vector databases
-- **Self-Evolution** — The closed-loop mechanism of audit review → skill crystallization
+- **Avatar-Evolution** — The closed-loop mechanism of audit review → skill crystallization
 - **Main Agent** — The first Agent in an organization, possessing global visibility
 - **Sub Agent** — Any Agent other than the Main Agent
-- **Reference Implementation** — The first complete implementation of the DSOS specification (i.e., RClaw)
+- **Reference Implementation** — The first complete implementation of the DAOS specification (i.e., RClaw)
 
 ### 1.2 Abbreviations
 
 | Abbreviation | Full Name |
 |---|---|
-| DSOS | Digital Self Operating System |
+| DAOS | Digital Avatar Operating System |
 | LLM | Large Language Model |
 | IPC | Inter-Process Communication |
 | MCP | Model Context Protocol |
@@ -109,11 +109,11 @@ This specification uses RFC 2119 keywords: **MUST**, **MUST NOT**, **SHOULD**, *
 
 ### 2.1 Three-Layer Progressive Philosophy
 
-The design of DSOS is based on a three-layer progressive philosophy, with each layer building upon the previous one:
+The design of DAOS is based on a three-layer progressive philosophy, with each layer building upon the previous one:
 
-**Layer 1: Digital Self**
+**Layer 1: Digital Avatar**
 
-An Agent is not a tool — it is a digital self that virtualizes all of the user's behavioral habits. It learns the user's communication style, decision-making preferences, time management, and collaboration patterns. As usage time increases, it becomes more and more like the user. This is not preset role-playing, but personalized formation through continuous interaction.
+An Agent is not a tool — it is a digital Avatar that virtualizes all of the user's behavioral habits. It learns the user's communication style, decision-making preferences, time management, and collaboration patterns. As usage time increases, it becomes more and more like the user. This is not preset role-playing, but personalized formation through continuous interaction.
 
 **Layer 2: Organizational Hierarchy Mapping**
 
@@ -125,14 +125,14 @@ Personnel are transient, but knowledge and decision-making patterns are permanen
 
 ### 2.2 Core Principles
 
-DSOS adheres to the following core principles. All specification clauses are derived from these principles:
+DAOS adheres to the following core principles. All specification clauses are derived from these principles:
 
 1. **Transparency Principle** — The Agent's thought process is fully visible
 2. **Local-First Principle** — Data is processed locally by default, not uploaded to the cloud
 3. **Controllability Principle** — Users have complete control over Agent behavior
 4. **Fixed Context Principle** — Working context has an upper limit; long-term memory is managed via vector databases
-5. **Self-Evolution Principle** — The Agent automatically crystallizes skills through audit review
-6. **Open Specification Principle** — DSOS is an open standard, not tied to any single implementation
+5. **Avatar-Evolution Principle** — The Agent automatically crystallizes skills through audit review
+6. **Open Specification Principle** — DAOS is an open standard, not tied to any single implementation
 
 ---
 
@@ -140,11 +140,11 @@ DSOS adheres to the following core principles. All specification clauses are der
 
 ### 3.1 Overall Architecture: Seven Layers + Layer Zero
 
-DSOS adopts a seven-layer architecture plus a Layer Zero security foundation. Each layer has clearly defined responsibilities and interface boundaries.
+DAOS adopts a seven-layer architecture plus a Layer Zero security foundation. Each layer has clearly defined responsibilities and interface boundaries.
 
 ```
 ┌─────────────────────────────────────────────────┐
-│  Layer 7: Self-Evolution                        │
+│  Layer 7: Avatar-Evolution                        │
 │  Audit Review → Skill Crystallization → Growth  │
 ├─────────────────────────────────────────────────┤
 │  Layer 6: Constraint Recovery                   │
@@ -174,15 +174,15 @@ DSOS adopts a seven-layer architecture plus a Layer Zero security foundation. Ea
 
 **Specification Requirements:**
 
-- DSOS MUST implement device identity binding
-- DSOS MUST implement strong identity authentication
-- DSOS MUST implement end-to-end encrypted communication
+- DAOS MUST implement device identity binding
+- DAOS MUST implement strong identity authentication
+- DAOS MUST implement end-to-end encrypted communication
 - Device-to-server handshake encryption (Handshake Encryption)
 - WebSocket-based encrypted tunnel
 - Message-level encrypted transmission
-- DSOS MUST implement a complete key management system
-- DSOS SHOULD support biometric authentication
-- DSOS MAY support hardware security modules
+- DAOS MUST implement a complete key management system
+- DAOS SHOULD support biometric authentication
+- DAOS MAY support hardware security modules
 
 **Security Flow Specification:**
 
@@ -200,15 +200,15 @@ Encrypted Communication → WebSocket Tunnel → Message-Level Encryption → Mu
 
 **Specification Requirements:**
 
-- DSOS MUST run each Agent in an isolated sandbox environment
-- DSOS MUST implement an IPC authentication mechanism
-- DSOS MUST implement file system mount security
+- DAOS MUST run each Agent in an isolated sandbox environment
+- DAOS MUST implement an IPC authentication mechanism
+- DAOS MUST implement file system mount security
 - Sender identity verification (Sender Allowlist)
 - Message signature and integrity verification
 - Access control for communication channels
-- DSOS MUST implement inter-Agent communication access control
-- DSOS SHOULD support dynamic adjustment of isolation levels
-- DSOS MAY support custom isolation policies
+- DAOS MUST implement inter-Agent communication access control
+- DAOS SHOULD support dynamic adjustment of isolation levels
+- DAOS MAY support custom isolation policies
 
 **Information Boundary Matrix:**
 
@@ -225,13 +225,13 @@ Encrypted Communication → WebSocket Tunnel → Message-Level Encryption → Mu
 
 **Specification Requirements:**
 
-- DSOS MUST provide a unified tool registration mechanism
-- DSOS MUST support tool semantic search and discovery
-- DSOS MUST support skill encapsulation and management
-- DSOS MUST support browser manipulation capability
-- DSOS SHOULD support tool annotation-based retrieval
-- DSOS SHOULD support tool hot-reloading
-- DSOS MAY support third-party tool marketplace integration
+- DAOS MUST provide a unified tool registration mechanism
+- DAOS MUST support tool semantic search and discovery
+- DAOS MUST support skill encapsulation and management
+- DAOS MUST support browser manipulation capability
+- DAOS SHOULD support tool annotation-based retrieval
+- DAOS SHOULD support tool hot-reloading
+- DAOS MAY support third-party tool marketplace integration
 
 **Tool Registration Interface Specification:**
 
@@ -264,16 +264,16 @@ SkillDefinition {
 
 **Specification Requirements:**
 
-- DSOS MUST provide a message routing mechanism
-- DSOS MUST support task scheduling, including:
+- DAOS MUST provide a message routing mechanism
+- DAOS MUST support task scheduling, including:
   - One-time scheduled tasks (execute once at specified time)
   - Periodic scheduled tasks (Cron expression or fixed interval)
   - Task state management (create, pause, resume, cancel)
-- DSOS MUST provide queue management
-- DSOS SHOULD support:
+- DAOS MUST provide queue management
+- DAOS SHOULD support:
   - **Group mode** — Tasks share context
   - **Isolated mode** — Tasks run in independent contexts
-- DSOS MAY support distributed task distribution
+- DAOS MAY support distributed task distribution
 
 **Task Scheduling Interface Specification:**
 
@@ -292,21 +292,21 @@ TaskDefinition {
 
 ### 3.6 Layer Four: Memory & State
 
-This is the most critical layer of the DSOS specification — and the fundamental differentiator from traditional "Agent" products.
+This is the most critical layer of the DAOS specification — and the fundamental differentiator from traditional "Agent" products.
 
 **Specification Requirements:**
 
-- DSOS MUST adopt a dual-memory architecture (Working Context + Vector Database)
-- DSOS MUST set a fixed upper limit for Working Context
-- DSOS MUST store document references as filenames only (not full text)
-- DSOS MUST adopt a vector database as long-term memory storage
-- DSOS MUST implement an automatic ingestion mechanism for documents and images
-- DSOS MUST maintain the following configuration file system:
+- DAOS MUST adopt a dual-memory architecture (Working Context + Vector Database)
+- DAOS MUST set a fixed upper limit for Working Context
+- DAOS MUST store document references as filenames only (not full text)
+- DAOS MUST adopt a vector database as long-term memory storage
+- DAOS MUST implement an automatic ingestion mechanism for documents and images
+- DAOS MUST maintain the following configuration file system:
   - Role description file (`CLAUDE.md`)
   - Memory file (`MEMORY.md`)
   - Rules file (`RULES.md`)
   - Soul file (`SOUL.md`)
-- DSOS SHOULD maintain semantic partitions in the vector database, including:
+- DAOS SHOULD maintain semantic partitions in the vector database, including:
   - Conversations table (`conversations`)
   - Documents table (`documents`)
   - Images table (`images`)
@@ -314,18 +314,18 @@ This is the most critical layer of the DSOS specification — and the fundamenta
   - Skills table (`skills`)
   - Summaries table (`summaries`)
   - Tools table (`tools`)
-- DSOS SHOULD implement memory merging and deduplication
-- DSOS MAY support cross-Agent memory sharing
+- DAOS SHOULD implement memory merging and deduplication
+- DAOS MAY support cross-Agent memory sharing
 
 ### 3.7 Layer Five: Evaluation & Observation
 
 **Specification Requirements:**
 
-- DSOS MUST provide a complete audit logging mechanism
-- DSOS MUST ensure Agent thought processes are transparent and visible
-- DSOS SHOULD implement daily audit review
-- DSOS SHOULD support behavior quality assessment
-- DSOS MAY support user-defined evaluation metrics
+- DAOS MUST provide a complete audit logging mechanism
+- DAOS MUST ensure Agent thought processes are transparent and visible
+- DAOS SHOULD implement daily audit review
+- DAOS SHOULD support behavior quality assessment
+- DAOS MAY support user-defined evaluation metrics
 
 **Audit Log Specification:**
 
@@ -345,29 +345,29 @@ AuditLogEntry {
 
 **Specification Requirements:**
 
-- DSOS MUST provide a rule engine for behavior constraint
-- DSOS MUST provide an anomaly recovery mechanism
-- DSOS SHOULD support:
+- DAOS MUST provide a rule engine for behavior constraint
+- DAOS MUST provide an anomaly recovery mechanism
+- DAOS SHOULD support:
   - Automatic rollback of executed operations
   - Reporting constraint violation details to the user
   - Providing alternative solution suggestions
-- DSOS SHOULD support dynamic rule updates
-- DSOS MAY support user-defined constraint policies
+- DAOS SHOULD support dynamic rule updates
+- DAOS MAY support user-defined constraint policies
 
-### 3.9 Layer Seven: Self-Evolution
+### 3.9 Layer Seven: Avatar-Evolution
 
-This is the core innovation layer that distinguishes the DSOS specification from all existing Harness implementations.
+This is the core innovation layer that distinguishes the DAOS specification from all existing Harness implementations.
 
 **Specification Requirements:**
 
-- DSOS MUST implement a self-evolution closed loop
-- DSOS MUST support automatic skill creation
-- DSOS MUST notify users after automatic skill creation
-- DSOS SHOULD implement skill version management
-- DSOS SHOULD support skill import and export
-- DSOS MAY support community skill sharing
+- DAOS MUST implement a Avatar-evolution closed loop
+- DAOS MUST support automatic skill creation
+- DAOS MUST notify users after automatic skill creation
+- DAOS SHOULD implement skill version management
+- DAOS SHOULD support skill import and export
+- DAOS MAY support community skill sharing
 
-**Self-Evolution Flow Specification:**
+**Avatar-Evolution Flow Specification:**
 
 ```
 Daily Audit Review
@@ -397,27 +397,27 @@ The fundamental flaw of traditional "Agent" products is equating the LLM's conte
 4. Context has a hard upper limit — beyond which it either truncates (forgetting) or errors out
 5. Full-text documents stuffed into context crowd out effective conversation space
 
-### 4.2 DSOS Context Management Principles
+### 4.2 DAOS Context Management Principles
 
 **Principle 1: Working Context has a fixed upper limit**
 
-- DSOS MUST enforce a fixed upper limit on Working Context
+- DAOS MUST enforce a fixed upper limit on Working Context
 - The upper limit SHOULD be transparent and configurable
 - When conversation records reach the limit, the system MUST NOT continue growing — it MUST evict the earliest records (FIFO)
 - The size of the Working Context MUST be predictable and controllable
 
 **Principle 2: Document references, not full text**
 
-- DSOS MUST NOT embed full document text into Working Context
-- DSOS MUST store only filename references in Working Context
+- DAOS MUST NOT embed full document text into Working Context
+- DAOS MUST store only filename references in Working Context
 - When an Agent needs to access document content, it MUST retrieve it through semantic search tools from the vector database or file system
 - Filename references SHOULD include brief descriptions
 
 **Principle 3: External memory expands infinitely**
 
-- DSOS MUST provide infinite external memory through vector databases
-- DSOS MUST support semantic retrieval of external memory
-- DSOS MUST implement periodic automatic ingestion of new documents and images into the vector database
+- DAOS MUST provide infinite external memory through vector databases
+- DAOS MUST support semantic retrieval of external memory
+- DAOS MUST implement periodic automatic ingestion of new documents and images into the vector database
 - The automatic ingestion frequency SHOULD be once daily, and MAY be configurable
 
 ### 4.3 Context Structure Specification
@@ -469,9 +469,9 @@ Filenames Written to Working Context (not full text)
 Daily Scheduled Task → New Documents/Images Vectorized → Written to Long-Term Memory
 ```
 
-### 4.5 Why Fixed Context is the Foundation of DSOS
+### 4.5 Why Fixed Context is the Foundation of DAOS
 
-Fixed context is not a compromise — it is the technical foundation that enables DSOS to achieve "local, transparent, controllable":
+Fixed context is not a compromise — it is the technical foundation that enables DAOS to achieve "local, transparent, controllable":
 
 | Dimension | Infinite Context | Fixed Context + External Memory |
 |---|---|---|
@@ -490,20 +490,20 @@ Fixed context is not a compromise — it is the technical foundation that enable
 
 **Specification Requirements:**
 
-- DSOS MUST support multi-user systems
-- DSOS MUST implement Main Agent / Sub Agent hierarchy:
+- DAOS MUST support multi-user systems
+- DAOS MUST implement Main Agent / Sub Agent hierarchy:
   - The first Agent created by the first registered user automatically becomes the Main Agent
   - Agents created by subsequent users are Sub Agents
   - The Main Agent has global visibility and can view the status of all Sub Agents
   - Sub Agents can only access their own information and resources
-- DSOS MUST support task distribution from Main Agent to Sub Agents
-- DSOS SHOULD support Agent sharing among users
-- DSOS SHOULD support cross-Agent collaboration workflows
+- DAOS MUST support task distribution from Main Agent to Sub Agents
+- DAOS SHOULD support Agent sharing among users
+- DAOS SHOULD support cross-Agent collaboration workflows
 
 ### 5.2 Organizational Hierarchy Mapping
 
 ```
-Organizational Structure               DSOS Agent Hierarchy
+Organizational Structure               DAOS Agent Hierarchy
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Organization Leader              →    Main Agent (Unique)
 ├── Dept A Leader                →    ├── User A's Agents 1, 2, 3...
@@ -516,7 +516,7 @@ Organization Leader              →    Main Agent (Unique)
 
 ### 5.3 Permission Matrix
 
-| Operation | Main Agent | Sub Agent (Self) | Sub Agent (Same User, Other) | Sub Agent (Other User) |
+| Operation | Main Agent | Sub Agent (Avatar) | Sub Agent (Same User, Other) | Sub Agent (Other User) |
 |---|---|---|---|---|
 | View Own Status | ✅ | ✅ | ❌ | ❌ |
 | View All Agent Status | ✅ | ❌ | ❌ | ❌ |
@@ -531,57 +531,57 @@ Organization Leader              →    Main Agent (Unique)
 
 **Specification Requirements:**
 
-- DSOS MUST retain Agent data after user departure
-- DSOS MUST support Agent inheritance (new users inheriting predecessor Agents)
-- DSOS SHOULD support Agent archival and restoration
-- DSOS SHOULD support knowledge transfer reporting
-- DSOS MAY support Agent role transformation
+- DAOS MUST retain Agent data after user departure
+- DAOS MUST support Agent inheritance (new users inheriting predecessor Agents)
+- DAOS SHOULD support Agent archival and restoration
+- DAOS SHOULD support knowledge transfer reporting
+- DAOS MAY support Agent role transformation
 
 ---
 
-## Chapter 6: Digital Self Specification
+## Chapter 6: Digital Avatar Specification
 
-### 6.1 Definition of Digital Self
+### 6.1 Definition of Digital Avatar
 
-The Digital Self is the core concept of DSOS. It is not a preset role template, but a user mirror naturally formed through continuous interaction.
+The Digital Avatar is the core concept of DAOS. It is not a preset role template, but a user mirror naturally formed through continuous interaction.
 
-**Digital Self vs. Traditional AI Assistant:**
+**Digital Avatar vs. Traditional AI Assistant:**
 
-| Dimension | Traditional AI Assistant | DSOS Digital Self |
+| Dimension | Traditional AI Assistant | DAOS Digital Avatar |
 |---|---|---|
 | Identity | Generic tool | User's digital mirror |
 | Personalization | Preset role templates | Naturally formed through interaction |
 | Learning Method | One-time configuration | Continuously absorbs user style |
 | Memory | Session-level, forgotten after session | Permanently accumulated, understands you better over time |
-| Evolution | Static, fixed capability | Self-evolving, automatically crystallizes new skills |
+| Evolution | Static, fixed capability | Avatar-evolving, automatically crystallizes new skills |
 | Ownership | Platform-owned | User-owned |
 
-### 6.2 Formation Mechanism of Digital Self
+### 6.2 Formation Mechanism of Digital Avatar
 
 **Specification Requirements:**
 
-- DSOS MUST continuously learn and absorb:
+- DAOS MUST continuously learn and absorb:
   - The user's communication style and phrasing habits
   - The user's decision-making preferences and priorities
   - The user's workflows and operational patterns
   - The user's creative style and aesthetic preferences
-- DSOS MUST store the Digital Self in persistent configuration files
-- DSOS SHOULD support users manually adjusting Digital Self traits
-- DSOS SHOULD support Digital Self export and migration
-- DSOS MAY support multi-faceted Digital Self (different selves for different scenarios)
+- DAOS MUST store the Digital Avatar in persistent configuration files
+- DAOS SHOULD support users manually adjusting Digital Avatar traits
+- DAOS SHOULD support Digital Avatar export and migration
+- DAOS MAY support multi-faceted Digital Avatar (different selves for different scenarios)
 
-### 6.3 Visualization of Digital Self
+### 6.3 Visualization of Digital Avatar
 
 **Specification Requirements:**
 
-- DSOS SHOULD provide a virtual avatar for the Digital Self
-- DSOS SHOULD provide workspace desktop visualization
-- DSOS MUST make the following transparent and visible:
+- DAOS SHOULD provide a virtual avatar for the Digital Avatar
+- DAOS SHOULD provide workspace desktop visualization
+- DAOS MUST make the following transparent and visible:
   - The Agent's thought process
   - The Agent's tool calls and parameters
   - Tool return results
   - The Agent's decision-making reasoning chain
-- DSOS MAY support customizable visualization themes
+- DAOS MAY support customizable visualization themes
 
 ---
 
@@ -591,31 +591,31 @@ The Digital Self is the core concept of DSOS. It is not a preset role template, 
 
 **Specification Requirements:**
 
-- DSOS MUST support a fully local operating mode
-- DSOS MUST support local AI models for inference
-- DSOS MUST ensure core functions work offline
-- DSOS SHOULD support hybrid local-cloud deployment
-- DSOS MAY support private cloud deployment
+- DAOS MUST support a fully local operating mode
+- DAOS MUST support local AI models for inference
+- DAOS MUST ensure core functions work offline
+- DAOS SHOULD support hybrid local-cloud deployment
+- DAOS MAY support private cloud deployment
 
 ### 7.2 Data Privacy Specification
 
 **Specification Requirements:**
 
-- DSOS MUST NOT upload user data by default
-- DSOS MUST provide a data sovereignty declaration
-- DSOS MUST support data export and deletion
-- DSOS SHOULD provide data usage audit reports
-- DSOS MAY support differential privacy techniques
+- DAOS MUST NOT upload user data by default
+- DAOS MUST provide a data sovereignty declaration
+- DAOS MUST support data export and deletion
+- DAOS SHOULD provide data usage audit reports
+- DAOS MAY support differential privacy techniques
 
 ### 7.3 Redaction Specification
 
 **Specification Requirements:**
 
-- DSOS MUST implement a two-stage redaction mechanism:
+- DAOS MUST implement a two-stage redaction mechanism:
   - **Stage 1 (Regex Redaction)** — Covers company names, phone numbers, ID numbers, email addresses, license plates, case numbers, and other regularly formatted sensitive information
   - **Stage 2 (Semantic Redaction)** — Uses local AI models to identify and redact names and other sensitive information without fixed formatting patterns
-- DSOS MUST ensure redacted content never leaves the local environment
-- DSOS SHOULD allow users to customize redaction rules
+- DAOS MUST ensure redacted content never leaves the local environment
+- DAOS SHOULD allow users to customize redaction rules
 
 ---
 
@@ -625,50 +625,50 @@ The Digital Self is the core concept of DSOS. It is not a preset role template, 
 
 **Specification Requirements:**
 
-- DSOS MUST provide a developer SDK
-- DSOS MUST encapsulate the following in the SDK:
+- DAOS MUST provide a developer SDK
+- DAOS MUST encapsulate the following in the SDK:
   - Token expiration and auto-refresh
   - Encrypted communication flow
   - Device authentication and handshake
   - WebSocket connection management
-- DSOS SHOULD provide multi-language SDKs
-- DSOS MAY provide a sandbox testing environment
+- DAOS SHOULD provide multi-language SDKs
+- DAOS MAY provide a sandbox testing environment
 
 ### 8.2 Theme/Skin System Specification
 
 **Specification Requirements:**
 
-- DSOS SHOULD provide a theme development template
-- DSOS SHOULD support theme import and export
-- DSOS MAY provide a theme marketplace
+- DAOS SHOULD provide a theme development template
+- DAOS SHOULD support theme import and export
+- DAOS MAY provide a theme marketplace
 
 ### 8.3 Skill Ecosystem Specification
 
 **Specification Requirements:**
 
-- DSOS MUST support skill import and export
-- DSOS SHOULD provide an official skill marketplace
-- DSOS MAY support community skill sharing and rating
+- DAOS MUST support skill import and export
+- DAOS SHOULD provide an official skill marketplace
+- DAOS MAY support community skill sharing and rating
 
 ---
 
 ## Chapter 9: Compliance Requirements
 
-### 9.1 DSOS Compliance Levels
+### 9.1 DAOS Compliance Levels
 
-DSOS compliance is categorized into three levels:
+DAOS compliance is categorized into three levels:
 
-**Level 1 — Core Compliance (DSOS-Core)**
+**Level 1 — Core Compliance (DAOS-Core)**
 
-Must satisfy all MUST-level specification requirements. Systems implementing DSOS-Core may use the "DSOS-Core Compliant" mark.
+Must satisfy all MUST-level specification requirements. Systems implementing DAOS-Core may use the "DAOS-Core Compliant" mark.
 
-**Level 2 — Full Compliance (DSOS-Full)**
+**Level 2 — Full Compliance (DAOS-Full)**
 
-Must satisfy all MUST and SHOULD level specification requirements. Systems implementing DSOS-Full may use the "DSOS-Full Compliant" mark.
+Must satisfy all MUST and SHOULD level specification requirements. Systems implementing DAOS-Full may use the "DAOS-Full Compliant" mark.
 
-**Level 3 — Excellence Compliance (DSOS-Excellence)**
+**Level 3 — Excellence Compliance (DAOS-Excellence)**
 
-Must satisfy all MUST, SHOULD, and MAY level specification requirements. Systems implementing DSOS-Excellence may use the "DSOS-Excellence Compliant" mark.
+Must satisfy all MUST, SHOULD, and MAY level specification requirements. Systems implementing DAOS-Excellence may use the "DAOS-Excellence Compliant" mark.
 
 ### 9.2 Compliance Checklist
 
@@ -694,7 +694,7 @@ Must satisfy all MUST, SHOULD, and MAY level specification requirements. Systems
 | Configuration File System | MUST | 3.6 |
 | Audit Logging | MUST | 3.7 |
 | Rule Engine | MUST | 3.8 |
-| Self-Evolution Closed Loop | MUST | 3.9 |
+| Avatar-Evolution Closed Loop | MUST | 3.9 |
 | Automatic Skill Creation | MUST | 3.9 |
 | Multi-User System | MUST | 5.1 |
 | Main/Sub Agent Hierarchy | MUST | 5.1 |
@@ -724,11 +724,11 @@ Must satisfy all MUST, SHOULD, and MAY level specification requirements. Systems
 
 ### 10.1 RClaw Overview
 
-RClaw is the first complete reference implementation of the DSOS specification v1.0, achieving **DSOS-Full** compliance. Below is the mapping of RClaw's physical implementation to each specification clause.
+RClaw is the first complete reference implementation of the DAOS specification v1.0, achieving **DAOS-Full** compliance. Below is the mapping of RClaw's physical implementation to each specification clause.
 
 ### 10.2 Architecture Mapping
 
-| DSOS Specification Layer | RClaw Implementation | Key Files / Modules |
+| DAOS Specification Layer | RClaw Implementation | Key Files / Modules |
 |---|---|---|
 | Layer 0: Security Foundation | Device binding + Biometric auth + Handshake encryption + WebSocket tunnel | `deviceid.rs`, `biometric.rs`, `handshake.rs`, `encryption.rs`, `websocket.rs`, `keys/` |
 | Layer 1: Information Boundary | Docker container isolation + IPC auth + Mount security | `container/Dockerfile`, `mount-security.ts`, `sender-allowlist.ts`, `ipc.ts` |
@@ -737,11 +737,11 @@ RClaw is the first complete reference implementation of the DSOS specification v
 | Layer 4: Memory & State | 4 config files + LanceDB 7 tables + Fixed 200-entry context | `CLAUDE.md`, `MEMORY.md`, `RULES.md`, `SOUL.md`, `memory.lance/` |
 | Layer 5: Evaluation & Observation | Audit logs + Daily review | `audit/`, `review_daily_audit`, `logger.ts` |
 | Layer 6: Constraint Recovery | Rule engine + Mount security | `RULES.md`, `mount-security.ts` |
-| Layer 7: Self-Evolution | Audit review → Auto-create skills → Vectorize | `VectorIPCService/agent/creator.py`, `skills.lance` |
+| Layer 7: Avatar-Evolution | Audit review → Auto-create skills → Vectorize | `VectorIPCService/agent/creator.py`, `skills.lance` |
 
 ### 10.3 Technology Stack Mapping
 
-| DSOS Specification Requirement | RClaw Technology Choice |
+| DAOS Specification Requirement | RClaw Technology Choice |
 |---|---|
 | Local AI Model | Qwen3.5 (inference) + Qwen3-VL-Embedding (vectorization) |
 | Vector Database | LanceDB (7-table semantic partitioning) |
@@ -756,7 +756,7 @@ RClaw is the first complete reference implementation of the DSOS specification v
 
 ### 10.4 Context Management Implementation
 
-RClaw's context management strictly adheres to the DSOS specification:
+RClaw's context management strictly adheres to the DAOS specification:
 
 - Working Context upper limit: **200 conversation entries**
 - Documents retain only **filenames** in Working Context, not full text
@@ -770,12 +770,12 @@ RClaw's context management strictly adheres to the DSOS specification:
 
 | Term | Definition |
 |---|---|
-| DSOS | Digital Self Operating System |
-| Digital Self | An Agent instance that virtualizes the user's behavioral habits |
+| DAOS | Digital Avatar Operating System |
+| Digital Avatar | An Agent instance that virtualizes the user's behavioral habits |
 | Harness | The engineering architecture that orchestrates and constrains LLM behavior |
 | Working Context | Fixed-size conversation history for interaction with the LLM |
 | Long-Term Memory | Persistent semantic storage based on vector databases |
-| Self-Evolution | The closed-loop mechanism of audit review → skill crystallization |
+| Avatar-Evolution | The closed-loop mechanism of audit review → skill crystallization |
 | Main Agent | The first Agent in an organization, possessing global visibility |
 | Sub Agent | Any Agent other than the Main Agent |
 | Organizational Memory Perpetuity | Retention of Agents and knowledge after personnel departure |
@@ -786,25 +786,25 @@ RClaw's context management strictly adheres to the DSOS specification:
 
 ---
 
-## Appendix A: Fundamental Differences Between DSOS and Existing "Agent" Products
+## Appendix A: Fundamental Differences Between DAOS and Existing "Agent" Products
 
-| Dimension | Existing "Agents" | DSOS Specification |
+| Dimension | Existing "Agents" | DAOS Specification |
 |---|---|---|
-| Essence | Chat windows with tool-calling | Digital Self Operating System |
+| Essence | Chat windows with tool-calling | Digital Avatar Operating System |
 | Memory Model | Context window = entire memory | Working Context (fixed) + Vector DB (infinite) |
 | Context Management | Infinite growth or hard truncation | Fixed upper limit + external retrieval |
 | Document Processing | Full text crammed into context | Filename references + on-demand retrieval |
-| Personalization | Preset role templates | Continuous learning forming Digital Self |
+| Personalization | Preset role templates | Continuous learning forming Digital Avatar |
 | Organizational Support | None or simple RBAC | Native Main/Sub Agent hierarchy mapping |
 | Personnel Departure | Data loss | Agent perpetually retained |
-| Self-Evolution | None | Audit → Crystallization → Auto-create skills |
+| Avatar-Evolution | None | Audit → Crystallization → Auto-create skills |
 | Operating Mode | Cloud-dependent | Local-first |
 | Privacy Protection | Relies on platform promises | Architecture-level guarantees (local + redaction + encryption) |
 | Transparency | Black box | Workspace desktop fully visible |
 
 ---
 
-## Appendix B: DSOS Specification Version History
+## Appendix B: DAOS Specification Version History
 
 | Version | Date | Changes |
 |---|---|---|
@@ -814,7 +814,7 @@ RClaw's context management strictly adheres to the DSOS specification:
 
 ## Appendix C: Acknowledgments
 
-The DSOS specification was inspired by the following work and practices:
+The DAOS specification was inspired by the following work and practices:
 
 - Harness Engineering (Martin Fowler, April 2026)
 - The RClaw Project
@@ -827,4 +827,4 @@ The DSOS specification was inspired by the following work and practices:
 
 > *"Take Back Control — The thinking never dies."*
 >
-> *DSOS Specification v1.0 — Let Agents truly become your Digital Self.*
+> *DAOS Specification v1.0 — Let Agents truly become your Digital Avatar.*
